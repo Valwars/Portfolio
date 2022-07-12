@@ -1,38 +1,768 @@
 .App {
-  text-align: center;
+    background-color: #FFFFFF;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    --main_color: #0003C7;
+    --second_color: #B5CEFF;
+    --third_color: #D3DFF6;
+    --font_color: #555A64;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.red_mode {
+    --main_color: #C70000;
+    --second_color: #FFB5B5;
+    --third_color: #F6D3D3;
+    --font_color: #555A64;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.green_mode {
+    --main_color: #147144;
+    --second_color: #74B768;
+    --third_color: #99BA90;
+    --font_color: #555A64;
 }
 
-.App-link {
-  color: #61dafb;
+@font-face {
+    font-family: BonvenoCF;
+    src: url("../public/avenir_ff/AvenirLTStd-Roman.otf");
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    font-family: BonvenoCF;
+    letter-spacing: 2px;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#hey {
+    font-size: 250%;
+    color: var(--main_color);
+}
+
+#welc {
+    width: 75%;
+    color: var(--second_color);
+}
+
+#menu_color {
+    width: 8%;
+    cursor: pointer;
+}
+
+.arrow_down {
+    display: block;
+    width: 7vw;
+    margin-left: 20%;
+    margin-top: 15%;
+    rotate: rotate(90deg);
+    animation: bounce 1.5s linear infinite;
+    cursor: pointer;
+}
+
+.cercle_color {
+    border-radius: 50%;
+    height: 2.5vw;
+    width: 2.5vw;
+    margin: auto 2%;
+    cursor: pointer;
+}
+
+#blue_theme {
+    background: #0003C7;
+}
+
+#red_theme {
+    background-color: red;
+}
+
+#green_theme {
+    background-color: green;
+}
+
+.bar {
+    width: 100%;
+    height: 0.5vw;
+    border-radius: 15px;
+    background-color: var(--second_color);
+    margin: 12%;
+}
+
+.border {
+    width: 10vw;
+    height: 5px;
+    background-color: var(--main_color);
+    margin: auto;
+}
+
+.first_part {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+
+#menu_color_bar {
+    width: 20%;
+    display: none;
+    flex-direction: row;
+    margin-left: 3%;
+}
+
+.icon_media {
+    width: 95%;
+    margin: auto;
+    margin-top: 2vw;
+}
+
+.media_icon {
+    width: 4vw;
+    margin: auto;
+    cursor: pointer;
+}
+
+.media_icon img {
+    width: 100%;
+}
+
+#left_part {
+    width: 50%;
+    margin: auto;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20%;
+}
+
+#left_part h1 {
+    text-align: left;
+}
+
+.icon_media {
+    display: flex;
+    flex-direction: row;
+}
+
+@keyframes bounce {
+    20%,
+    50%,
+    80%,
+    to {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    70% {
+        transform: translateY(-15px);
+    }
+    90% {
+        transform: translateY(-4px);
+    }
+}
+
+#outer-circle {
+    background: var(--main_color);
+    border-radius: 50%;
+    height: 45vw;
+    width: 45vw;
+    position: relative;
+    margin-top: 2vw;
+    /* 
+   Child elements with absolute positioning will be 
+   positioned relative to this div 
+  */
+}
+
+.inner-circle {
+    position: absolute;
+    background: var(--second_color);
+    border-radius: 50%;
+    height: 35vw;
+    width: 35vw;
+    /*
+   Put top edge and left edge in the center
+  */
+    top: 50%;
+    left: 50%;
+    margin: -17.5vw 0px 0px -17.5vw;
+    /* 
+   Offset the position correctly with
+   minus half of the width and minus half of the height 
+  */
+}
+
+.inner-circle1 {
+    position: absolute;
+    background: var(--third_color);
+    border-radius: 50%;
+    height: 25vw;
+    width: 25vw;
+    /*
+ Put top edge and left edge in the center
+*/
+    top: 50%;
+    left: 50%;
+    margin: -12.5vw 0px 0px -12.5vw;
+    /* 
+ Offset the position correctly with
+ minus half of the width and minus half of the height 
+*/
+}
+
+.inner-circle3 {
+    position: absolute;
+    background: #D3DFF6;
+    border-radius: 50%;
+    height: 15vw;
+    width: 15vw;
+    /*
+ Put top edge and left edge in the center
+*/
+    top: 50%;
+    left: 50%;
+    margin: -7.5vw 0px 0px -7.5vw;
+}
+
+.circle {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#transition_circle,
+#transition_circle2 {
+    position: fixed;
+    width: 0%;
+    height: 100%;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.transition {
+    -webkit-animation: transition 1s ease both;
+    animation: transition 1s ease both;
+}
+
+.form_transition {
+    background-color: var(--main_color);
+    -webkit-animation: form_animation 1s ease both;
+    animation: form_animation 0.5s ease both;
+}
+
+.form_transition_out {
+    background-color: var(--main_color);
+    -webkit-animation: form_animation_out 1s ease both;
+    animation: form_animation_out 0.5s ease both;
+}
+
+@keyframes transition {
+    0% {
+        width: 0%;
+    }
+    40% {
+        width: 100%;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes form_animation {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 45%;
+    }
+}
+
+@keyframes form_animation_out {
+    0% {
+        width: 45%;
+    }
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes rotate_circle {
+    from {
+        transform: rotate(-360deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* 2 IEME PARTIE */
+
+#background_tab {
+    margin-top: 5%;
+    width: 100%;
+    height: 35vw;
+    background-color: var(--main_color);
+}
+
+#skills_table {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    background-color: #FFFFFF;
+    width: 70%;
+    height: fit-content;
+    top: 40%;
+    left: 50%;
+    border-radius: 100px;
+    -ms-transform: translate(-50%, -10%);
+    transform: translate(-50%, -10%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.column {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    color: var(--main_color);
+}
+
+.column h3 {
+    width: 80%;
+    color: var(--font_color);
+    margin: auto;
+    height: 200px;
+    margin-top: 5%;
+}
+
+.column h2 {
+    margin-top: 20%;
+}
+
+.column img {
+    width: 35%;
+    margin-top: 30%;
+    margin-bottom: 10%;
+}
+
+#developer {
+    border-left: 1px solid var(--font_color);
+    border-right: 1px solid var(--font_color);
+}
+
+.third_part {
+    margin-top: 42vw;
+    text-align: center;
+}
+
+.third_part h1 {
+    color: var(--main_color);
+    margin-bottom: 2%;
+}
+
+.third_part span {
+    color: var(--second_color);
+    cursor: pointer;
+}
+
+.grid_projects {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5% auto;
+}
+
+.projet {
+    position: relative;
+    width: 28vw;
+    height: auto;
+    padding-bottom: 1%;
+    margin: auto;
+    border-radius: 50px;
+    background-color: var(--main_color);
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10%;
+}
+
+.projet video {
+    width: 100%;
+    height: max-content;
+    margin: auto;
+    border: 1px solid var(--main_color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.description {
+    position: absolute;
+    display: none;
+    width: 90%;
+    top: 45%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 100%;
+    text-align: center;
+}
+
+.projet:hover>.vid {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.description:hover {
+    display: block;
+}
+
+.description:hover .description:hover {
+    display: block;
+}
+
+.projet video:hover+.description {
+    display: block;
+}
+
+.last_part {
+    background-color: var(--main_color);
+    padding: 3%;
+}
+
+#formulaire_show {
+    background-color: var(--main_color);
+    color: white;
+    padding: 3% 10%;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#formulaire_show:hover {
+    opacity: 0.8;
+    transition: all 0.4s;
+}
+
+.container_last {
+    background-color: var(--second_color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 2%;
+    border-radius: 50px;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.last_part h1 {
+    color: white;
+    margin: auto;
+}
+
+#transition_circle2 form {
+    width: 65%;
+    height: fit-content;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    visibility: hidden;
+    padding: 5%;
+    -webkit-padding-start: 5%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#transition_circle2 form h2 {
+    text-align: center;
+    color: var(--main_color);
+}
+
+#transition_circle2 h4 {
+    margin-top: 8%;
+}
+
+#transition_circle2 input,
+#transition_circle2 textarea {
+    background-color: var(--third_color);
+    border: 0px;
+    height: 2vw;
+    width: 90%;
+    padding: 0% 5%;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#transition_circle2 textarea {
+    resize: none;
+    height: 10vw;
+    padding: 2% 5%;
+}
+
+#send {
+    width: 100%;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#send button {
+    border: 0px;
+    background-color: var(--main_color);
+    color: white;
+    width: 30%;
+    padding: 2%;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+input,
+textarea {
+    font-family: BonvenoCF;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    right: 1vw;
+    transform: translate(-50%, -50%);
+    transform: rotate(90deg);
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.arrow span {
+    display: block;
+    width: 1.5vw;
+    height: 1.5vw;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+.arrow span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.arrow span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px, -20px);
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: rotate(45deg) translate(20px, 20px);
+    }
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 480px) {
+    body,
+    .App {
+        width: 100%;
+        overflow-x: hidden;
+        letter-spacing: 0.5px;
+    }
+    #left_part {
+        width: 70%;
+        margin-left: 0px;
+        margin-right: 5%;
+    }
+    .right_part {
+        margin-top: 10%;
+    }
+    #outer-circle {
+        height: 25vw;
+        width: 25vw;
+    }
+    #skills_table {
+        width: 90%;
+        height: fit-content;
+        border-radius: 30px;
+    }
+    .inner-circle {
+        height: 20vw;
+        width: 20vw;
+        margin: -10vw 0px 0px -10vw;
+    }
+    .inner-circle1 {
+        height: 15vw;
+        width: 15vw;
+        margin: -7.5vw 0px 0px -7.5vw;
+    }
+    .inner-circle3 {
+        height: 10vw;
+        width: 10vw;
+        margin: -5vw 0px 0px -5vw;
+    }
+    #background_tab {
+        height: 50vw;
+    }
+    .column img {
+        margin-top: 20%;
+    }
+    h1,
+    #hey {
+        width: fit-content;
+        font-size: 5vw;
+    }
+    h3 {
+        font-size: 3vw;
+    }
+    .column h3 {
+        height: 25vw;
+        font-size: 2.5vw;
+    }
+    .column h1 {
+        margin: auto;
+    }
+    .second_part h1,
+    .second_part h2 {
+        font-size: 4vw;
+    }
+    #welc {
+        width: 100%;
+        font-size: 4vw;
+    }
+    .icon_media {
+        flex-direction: column;
+        width: fit-content;
+    }
+    .border {
+        width: 3px;
+        height: 20px;
+        transform: rotate(90deg);
+    }
+    #menu {
+        width: 80vw;
+        margin-top: 10%;
+    }
+    .bar {
+        height: 1vw;
+    }
+    .arrow_down {
+        margin-left: 35%;
+    }
+    .third_part {
+        margin-top: 75%;
+    }
+    .third_part h1 {
+        margin: auto;
+    }
+    .third_part h2 {
+        font-size: 4vw;
+        width: 90%;
+        margin: auto;
+        margin-top: 3%;
+    }
+    .grid_projects {
+        width: 95%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .projet {
+        position: relative;
+        width: 45vw;
+        height: auto;
+        padding-bottom: 1%;
+        margin: auto;
+        border-radius: 50px;
+        background-color: var(--main_color);
+        cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin-bottom: 10%;
+    }
+    .projet video {
+        height: 100%;
+        width: 100%;
+    }
+    .projet h3 {
+        font-size: 2.5vw;
+    }
+    .last_part {
+        background-color: var(--main_color);
+        padding: 3%;
+    }
+    .last_part h1 {
+        font-size: 4vw;
+        width: 60%;
+        margin: auto;
+    }
+    .last_part h2 {
+        margin: auto;
+    }
+    .container_last {
+        padding: 2% 6%;
+    }
+    #formulaire_show {
+        background-color: var(--main_color);
+        color: white;
+        padding: 1% 3%;
+        border-radius: 50px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        cursor: pointer;
+        text-decoration: none;
+    }
+    @keyframes form_animation {
+        0% {
+            width: 0%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+    @keyframes form_animation_out {
+        0% {
+            width: 100%;
+        }
+        100% {
+            width: 0%;
+        }
+    }
+    .arrow span {
+        width: 2vw;
+        height: 2vw;
+    }
+    #transition_circle2 form {
+        width: 78%;
+        height: fit-content;
+        background-color: #FFFFFF;
+        border-radius: 50px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        visibility: hidden;
+        padding: 5%;
+        -webkit-padding-start: 5%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    #transition_circle2 input {
+        padding: 3% 5%;
+    }
 }
