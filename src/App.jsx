@@ -198,6 +198,8 @@ function App() {
 
   }
 
+  
+
   return (
 
 
@@ -373,7 +375,8 @@ function App() {
 
       <div className='third_part'>
         <h1>Some of my projects</h1>
-        <h2>If you want to know more about my projects, <br></br><span>email me .</span></h2>
+        <h2>If you want to know more about my projects, <br></br><span onClick={() => window.open('mailto:valentin.merault@gmail.com?subject=Contact Valentin&body=')
+            }>email me .</span></h2>
 
         <div className='grid_projects'>
 
