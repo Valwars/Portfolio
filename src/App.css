@@ -369,7 +369,6 @@ body::-webkit-scrollbar {
 }
 
 .third_part {
-    margin-top: 42vw;
     text-align: center;
 }
 
@@ -572,6 +571,10 @@ textarea {
     animation-delay: -0.4s;
 }
 
+#spacer {
+    height: fit-content;
+}
+
 #project_popUp {
     display: none;
     position: fixed;
@@ -678,7 +681,7 @@ textarea {
 }
 
 #loader {
-    position: absolute;
+    position: fixed;
     /* postulat de départ */
     top: 50%;
     left: 50%;
@@ -795,9 +798,6 @@ textarea {
     .arrow_down {
         margin-left: 35%;
     }
-    .third_part {
-        margin-top: 75%;
-    }
     .third_part h1 {
         margin: auto;
     }
@@ -853,6 +853,15 @@ textarea {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         cursor: pointer;
         text-decoration: none;
+    }
+    .video_proj_pop {
+        flex-direction: column;
+    }
+    #project_popUp h3 {
+        width: 90%;
+        margin-top: 10%;
+        padding-bottom: 4%;
+        height: 60%;
     }
     @keyframes form_animation {
         0% {
